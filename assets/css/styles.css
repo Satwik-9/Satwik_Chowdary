@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+
+body {
+  font-family: 'Cardo', serif;
+}
+
+
+.timeline {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 700px;
+  position: relative;
+}
+
+.timeline__content-title {
+  font-weight: normal;
+  font-size: 66px;
+  margin: -10px 0 0 0;
+  transition: .4s;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #C7B299;
+}
+
+.timeline__content-desc {
+  margin: 0;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #777;
+  font-weight: normal;
+  line-height: 25px;
+}
+
+.timeline:before {
+  display: none; /* Remove the continuous center line */
+}
+
+.timeline-item {
+  padding: 40px 0;
+  opacity: 0.7;
+  transition: .5s;
+  box-sizing: border-box;
+  width: calc(50% - 40px);
+  display: flex;
+  position: relative;
+}
+
+.timeline-item:nth-child(even) {
+  align-self: flex-end;
+}
+
+.timeline-item--active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.timeline-segment {
+  position: absolute;
+  width: 2px;
+  height: 400px; /* Shorter line segment */
+  background: #C7B299;
+  transition: all 0.3s ease;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+}
+
+.timeline-segment--active {
+  width: 6px;
+  background: #a58f7b;
+  height: 100px; /* Slightly longer when active */
+}
+
+.timeline-container {
+  width: 100%;
+  position: relative;
+  padding: 80px 0;
+  transition: .3s ease 0s;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.timeline-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.timeline-header__title {
+  color: #C7B299;
+  font-size: 46px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.timeline-header__subtitle {
+  color: #777;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 16px;
+  letter-spacing: 5px;
+  margin: 10px 0 0 0;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 767px) {
+  .timeline-item {
+    align-self: baseline !important;
+    width: 100%;
+    padding: 0 30px 150px 80px;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 40px;
+  }
+}
